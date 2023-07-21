@@ -1,0 +1,22 @@
+.input {
+	border-bottom: 3px solid black;
+	padding: 1rem;
+	font-size: 1.5rem;
+	max-width: 18rem;
+}
+.input:focus {
+	outline: none;
+}
+.ctn {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4rem;
+	justify-content: center;
+	padding-bottom: 6rem;
+}
+
+@media (min-width: 1200px) {
+	.ctn {
+		justify-content: start;
+	}
+}
