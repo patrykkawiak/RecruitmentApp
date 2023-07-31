@@ -7,12 +7,13 @@ import Applications from './pages/Applications';
 import Brand from './pages/Brand';
 import Theme from './pages/Theme';
 import { Homeloader as homeLoader } from './pages/Home';
+import { HomeAction as homeAction } from './pages/Home';
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <RootLayout />,
 		children: [
-			{ index: true, element: <Home />, loader: homeLoader },
+			{ index: true, element: <Home />, loader: homeLoader, action: homeAction },
 			{
 				path: 'admin',
 				element: <AdminLayout />,

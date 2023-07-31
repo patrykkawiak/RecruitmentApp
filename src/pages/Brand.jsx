@@ -6,6 +6,7 @@ import { brandSliceActions } from '../store/brandSlice';
 import { useState } from 'react';
 import { db } from '../firebase-config';
 import { doc, setDoc } from 'firebase/firestore';
+import Button from '../components/UI/Button';
 
 const Brand = () => {
 	const dispatch = useDispatch();
@@ -103,13 +104,7 @@ const Brand = () => {
 						onChange={handleBrandDesc}
 					></textarea>
 				</InputCtn>
-				<button
-					className='mt-4 px-4 py-2 text-xl border-solid border-2'
-					style={{ borderColor: color }}
-					onClick={handleChangeDetails}
-				>
-					Change
-				</button>
+				<Button clickFn={handleChangeDetails}>Change</Button>
 			</div>
 		</section>
 	);
