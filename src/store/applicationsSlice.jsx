@@ -1,48 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const initialState = {
-  items: [
-    {
-      id: "a1",
-      name: "Patryk",
-      lastname: "Kawiak",
-      email: "patryk.kawiak@hotmail.com",
-      phone: "669416762",
-      city: "Kwidzyn",
-      job: "Unemployed",
-      vacancy: "FrontEndDeveloper",
-      salary: 3999,
-      resume: null,
-      status: "open",
-    },
-    {
-      id: "a2",
-      name: "Paula",
-      lastname: "Strześniewksa",
-      email: "paula.strzesniewksa@hotmail.com",
-      phone: "664244212",
-      city: "Prabuty",
-      job: "Unemployed",
-      vacancy: "FrontEndDeveloper",
-      salary: 3999,
-      resume: null,
-      status: "open",
-    },
-    {
-      id: "a3",
-      name: "Bon",
-      lastname: "Scott",
-      email: "bonito@hotmail.com",
-      phone: "663454212",
-      city: "London",
-      job: "Unemployed",
-      vacancy: "Backend",
-      salary: 6999,
-      resume: null,
-      status: "rejected",
-    },
-  ],
-  totalCount: 3,
+  items: [],
+  totalCount: 0,
 };
 
 const applicationsSlice = createSlice({
@@ -63,12 +24,16 @@ const applicationsSlice = createSlice({
       const itemIndex = state.items.findIndex((item) => item.id === itemID);
       state.items[itemIndex].status = "rejected";
     },
-	removeApplication(state, action) {
-		const itemID = action.payload;
-		const item = state.items.find((item) => item.id === itemID);
-		state.items.pop(item);
-    state.totalCount--;
-	  },
+    removeApplication(state, action) {
+      const itemID = action.payload;
+      const item = state.items.filter((item) => item.id !== itemID);
+      state.items = item
+      state.totalCount--;
+    },
+    updateApplications(state, action) {
+      state.items = action.payload
+      state.totalCount = action.payload.length;
+    }
   },
 });
 export default applicationsSlice;

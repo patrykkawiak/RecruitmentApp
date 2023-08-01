@@ -14,6 +14,7 @@ input::-webkit-inner-spin-button {
 .inputCtn {
   position: relative;
   width: max-content;
+  margin-bottom: 1rem;
   .input {
     border: 2px solid black;
     border-radius: 8px;
@@ -21,7 +22,7 @@ input::-webkit-inner-spin-button {
     font-size: 1.5rem;
     width: 25rem;
     appearance: none;
-  }
+  } 
   label {
     position: absolute;
     top: 1px;
@@ -34,6 +35,7 @@ input::-webkit-inner-spin-button {
     padding: 0 .5rem;
  
   }
+
 }
 
 .salary::after {
@@ -50,5 +52,38 @@ input::-webkit-inner-spin-button {
   outline: none;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 576px) {
+  .ctn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }  
+  
+  .inputCtn {
+    position: relative;
+    width: max-content;
+    .input {
+      border: 2px solid black;
+      border-radius: 8px;
+      padding: 1rem;
+      font-size: 1.5rem;
+      width: 25rem;
+      appearance: none;
+    }
+    label {
+      position: absolute;
+      top: 1px;
+      transform: translateY(-50%);
+      left: 5%;
+      font-size: 1.2rem;
+      pointer-events: none;
+      color: rgb(75, 75, 75);
+      background-color: #fff;
+      padding: 0 .5rem;
+   
+    }
+  
+  }
 }

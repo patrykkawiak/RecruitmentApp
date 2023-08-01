@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from '@firebase/firestore';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyDra1K47MrARBcpsGqRmX7cFpGolOt3AHo',
+	apiKey: import.meta.env.VITE_API_KEY,
 	authDomain: 'betterjob-78a15.firebaseapp.com',
 	projectId: 'betterjob-78a15',
 	storageBucket: 'betterjob-78a15.appspot.com',

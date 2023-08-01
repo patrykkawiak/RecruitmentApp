@@ -15,13 +15,13 @@ const Nav = () => {
 						<img src={Icon} alt='logo' className='h-10' />
 						<div className={'text-4xl'}>BetterJob</div>
 					</Link>
-					<NavLink
+					<Link
 						className='text-xl p-4 hover:scale-110 duration-300'
 						to='/admin'
 						style={{ color }}
 					>
 						Recruiter panel
-					</NavLink>
+					</Link>
 				</div>
 			</div>
 		</nav>

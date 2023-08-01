@@ -16,46 +16,65 @@ const Application = ({
   removeHandler,
 }) => {
   return (
-    <div key={id} className=" border-solid border-slate-600 border-2 p-4 h-max">
-      <p>Name: {name}</p>
-      <p>Last Name: {lastname}</p>
-      <p className="flex gap-2">
-        Email:{" "}
+    <div
+      key={id}
+      className=" border-solid border-slate-300 border p-8 rounded-lg shadow-xl"
+    >
+      <div className="flex gap-16 items-center">
+        <p className="text-3xl">
+          {name} {lastname}
+        </p>
+        <p className="text-lg">{vacancy}</p>
+      </div>
+
+      <div className="flex gap-4 mt-6">
         <a
-          className=" cursor-pointer"
+          className=" cursor-pointer bg-slate-200 w-fit px-2 py-1 rounded-lg"
           onClick={() => (window.location = `mailto:${email}`)}
         >
-          {email}
+          <i className='bx bx-envelope' ></i> {email}
         </a>
-      </p>
-      <p className="flex gap-2">
-        Phone:{" "}
         <a
-          className=" cursor-pointer"
+          className=" cursor-pointer bg-slate-200 w-fit px-2 py-1 rounded-lg"
           onClick={() => (window.location = `tel:${phone}`)}
         >
-          {phone}
+          <i className='bx bxs-phone' ></i> {phone}
         </a>
+      </div>
+
+      <div className="flex mt-4 gap-4">
+        <p className="bg-slate-200 w-fit px-2 py-1 rounded-lg"> <i className='bx bx-current-location' ></i> {city}</p>
+        <p className="bg-slate-200 w-fit px-2 py-1 rounded-lg"><i class='bx bxs-briefcase' ></i> {job}</p>
+
+        <p className="bg-slate-200 w-fit px-2 py-1 rounded-lg"><i class='bx bx-credit-card' ></i> {salary}</p>
+      </div>
+      <p className=" bg-black text-white w-fit px-2 py-1 rounded-lg mt-4">
+        {status}
       </p>
-      <p>City: {city}</p>
-      <p>Current Job: {job}</p>
-      <p>Vacancy: {vacancy}</p>
-      <p>Salary Requirement: {salary}</p>
-      <p>Status: {status}</p>
-      <Button>
-        <a href={resume} download>
-          Download {name}'s CV
-        </a>
-      </Button>
-      <div className="flex gap-4">
+      <div className="flex justify-end gap-4">
+        <Button>
+          <a href={resume} download>
+            <i className="bx bxs-file-pdf"></i>
+          </a>
+        </Button>
+
         {status === "open" && (
           <>
-            <Button clickFn={acceptHandler}>Accept</Button>{" "}
-            <Button clickFn={rejectHandler}>Reject</Button>
+            <Button clickFn={acceptHandler}>
+              <i className="bx bx-check "></i>
+            </Button>{" "}
+            <Button clickFn={rejectHandler}>
+              <i className="bx bx-x"></i>
+            </Button>
           </>
         )}
-		{status === 'rejected' && <Button clickFn={removeHandler}>Delete</Button>}
-		{status === 'accept' && <Button>Send message</Button>}
+        {status === "rejected" && <Button clickFn={removeHandler}>X</Button>}
+        {status === "accept" && (
+          <div className="flex gap-4">
+            <Button><i className='bx bxl-telegram' ></i></Button>
+            <Button clickFn={removeHandler}>X</Button>
+          </div>
+        )}
       </div>
     </div>
   );

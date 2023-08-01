@@ -6,7 +6,7 @@ const Header = () => {
 	return (
 		<>
 			<header
-				className='w-full z-0 h-80 bg-no-repeat bg-cover bg-center rounded-b-[50px] overflow-hidden'
+				className='w-full z-0 h-80 bg-no-repeat bg-cover bg-top rounded-b-[50px] overflow-hidden bg-fixed'
 				style={{ backgroundImage: imgURL }}
 			>
 				<div className='h-full w-full z-10 bg-black/60 flex justify-center items-center text-white text-7xl tracking-wider'>

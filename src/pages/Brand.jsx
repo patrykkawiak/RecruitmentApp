@@ -61,51 +61,68 @@ const Brand = () => {
 
 	const color = useSelector((state) => state.theme.color);
 	return (
-		<section className='p-16'>
+		<section className='inline-flex p-8 flex-wrap gap-8 h-full justify-center'>
 			<Heading>Brand Info</Heading>
-			<div>
+			<div className={classes.ctn}>
 				<InputCtn>
-					<label htmlFor='name'>Brand Name</label>
+				<div className={classes.inputCtn}>
 					<input
 						className={classes.input}
 						type='text'
 						name='name'
 						value={inputName}
 						onChange={handleBrandName}
+						style={{borderColor: color}}
 					/>
+					<label htmlFor='name'>Brand Name</label>
+				</div>
 				</InputCtn>
 				<InputCtn>
-					<label htmlFor='name'>Brand Img</label>
+					<div className={classes.inputCtn}>
 					<input
 						className={classes.input}
 						type='text'
 						name='name'
 						value={inputImg}
 						onChange={handleBrandImg}
+						style={{borderColor: color}}
 					/>
+					<label htmlFor='name'>Brand Img</label>
+					</div>
 				</InputCtn>
+				<div className='flex gap-8'>
+				<div>
 				<InputCtn>
-					<label htmlFor='name'>Brand Heading</label>
+				<div className={classes.inputCtn}>
 					<input
 						className={classes.input}
 						type='text'
 						name='name'
 						value={inputHeading}
 						onChange={handleBrandHeading}
+						style={{borderColor: color}}
 					/>
-				</InputCtn>
-				<InputCtn>
-					<label htmlFor='name'>Brand Description</label>
-					<textarea
-						className={classes.input}
-						type='text'
-						name='name'
-						value={inputDesc}
-						onChange={handleBrandDesc}
-					></textarea>
+					<label htmlFor='name'>Brand Heading</label>
+				</div>
 				</InputCtn>
 				<Button clickFn={handleChangeDetails}>Change</Button>
+				</div>
+				<InputCtn>
+				<div className={classes.inputCtn}>
+					<textarea
+						className={`${classes.input}`}
+						type='text'
+						name='name'	
+						value={inputDesc}
+						onChange={handleBrandDesc}
+						style={{borderColor: color, height: '12rem'}}
+					></textarea>
+					<label htmlFor='name'>Brand Description</label>
+				</div>
+				</InputCtn>
+				</div>
 			</div>
+				
 		</section>
 	);
 };
