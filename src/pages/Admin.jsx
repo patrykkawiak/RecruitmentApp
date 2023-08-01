@@ -30,7 +30,7 @@ const Admin = () => {
   ).length;
 
   return (
-    <div className="inline-flex p-8 flex-wrap gap-8 h-full justify-center">
+    <div className="inline-flex p-8 flex-wrap gap-8 h-full w-full justify-center items-center">
       <Card>
         <div className="flex h-full flex-col justify-center items-center gap-8">
           <i className="bx bxs-user text-7xl" style={{ color }}></i>

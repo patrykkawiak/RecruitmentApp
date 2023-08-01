@@ -46,7 +46,7 @@ const Application = ({
         <p className="bg-slate-200 w-fit px-2 py-1 rounded-lg"> <i className='bx bx-current-location' ></i> {city}</p>
         <p className="bg-slate-200 w-fit px-2 py-1 rounded-lg"><i class='bx bxs-briefcase' ></i> {job}</p>
 
-        <p className="bg-slate-200 w-fit px-2 py-1 rounded-lg"><i class='bx bx-credit-card' ></i> {salary}</p>
+        <p className="bg-slate-200 w-fit px-2 py-1 rounded-lg"><i class='bx bx-credit-card' ></i> {salary}$</p>
       </div>
       <p className=" bg-black text-white w-fit px-2 py-1 rounded-lg mt-4">
         {status}

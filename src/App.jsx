@@ -8,19 +8,19 @@ import Brand from "./pages/Brand";
 import Theme from "./pages/Theme";
 import { HomeAction as homeAction } from "./pages/Home";
 import Finish from "./pages/Finish";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 
-// import { rootloader } from "./pages/RootLayout";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-	// loader: rootloader,
     children: [
       {
         index: true,
         element: <Home />,
         action: homeAction,
-        loader: homeLoader
+        loader: homeLoader,
       },
       {
         path: "admin",
@@ -32,7 +32,9 @@ const router = createBrowserRouter([
           { path: "theme", element: <Theme /> },
         ],
       },
-      {path: "finish", element: <Finish/>}
+      { path: "finish", element: <Finish /> },
+      { path: "login", element: <Login></Login> },
+      { path: "register", element: <Register /> },
     ],
   },
 ]);

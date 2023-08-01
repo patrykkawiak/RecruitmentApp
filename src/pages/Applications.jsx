@@ -52,9 +52,9 @@ const Applications = (params) => {
     } else if (action === "reject") {
       rejectApplication(appId);
       setAction(null);
-    } else if (action === 'remove') {
-      removeApplication(appId)
-      setAction(null)
+    } else if (action === "remove") {
+      removeApplication(appId);
+      setAction(null);
     }
     setModal(false);
   };

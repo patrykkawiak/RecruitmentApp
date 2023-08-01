@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
   items: [],
   totalCount: 0,
@@ -27,13 +26,13 @@ const applicationsSlice = createSlice({
     removeApplication(state, action) {
       const itemID = action.payload;
       const item = state.items.filter((item) => item.id !== itemID);
-      state.items = item
+      state.items = item;
       state.totalCount--;
     },
     updateApplications(state, action) {
-      state.items = action.payload
+      state.items = action.payload;
       state.totalCount = action.payload.length;
-    }
+    },
   },
 });
 export default applicationsSlice;
