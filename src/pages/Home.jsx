@@ -12,7 +12,6 @@ import {
   useLoaderData,
   useNavigate,
 } from "react-router-dom";
-import { redirect } from "react-router-dom";
 import { brandSliceActions } from "../store/brandSlice";
 import { themeSliceActions } from "../store/themeSlice";
 import Button from "../components/UI/Button";
